@@ -10,5 +10,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_getenv(char **envp, const char *name);
 size_t	ft_strlen(const char *s);
 void	ft_free_array(void **array);
+char	*ft_strcat(char *dest, char *src);
+char	*ft_strdupcat(char *s1, char *s2);
 
 #endif

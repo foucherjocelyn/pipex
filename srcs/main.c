@@ -10,10 +10,7 @@ int	main(int argc, char **argv, char **envp)
 	path = ft_getenv(envp, "PATH");
 	cmd.envp = envp;
 	parse_cmd(&cmd, argv[1]);
-	strcpy(path, "/bin/");
-	strcat(path, cmd.argv[0]);
-	cmd.filename = malloc(100);
-	strcpy(cmd.filename, path);
+	cmd.filename = ft_strdupcat("/bin/", cmd.argv[0]);
 	execute_cmd(cmd);
 	return (0);
 }
