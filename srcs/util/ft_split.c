@@ -6,14 +6,14 @@
 /*   By: jfoucher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:46:41 by jfoucher          #+#    #+#             */
-/*   Updated: 2021/07/08 19:22:53 by jfoucher         ###   ########.fr       */
+/*   Updated: 2021/07/10 13:56:16 by jfoucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "util.h"
 
-static void		freeall(char **strs)
+static void	freeall(char **strs)
 {
 	int		i;
 
@@ -26,7 +26,7 @@ static void		freeall(char **strs)
 	free(strs);
 }
 
-static char		**ssalloc(char const *s, char c)
+static char	**ssalloc(char const *s, char c)
 {
 	char	**strs;
 	int		i;
@@ -50,11 +50,11 @@ static char		**ssalloc(char const *s, char c)
 	return (strs);
 }
 
-static int		salloc(char **strs, char const *s, char c)
+static int	salloc(char **strs, char const *s, char c)
 {
 	int	i;
 	int	j;
-	int k;
+	int	k;
 
 	i = 0;
 	j = 0;
@@ -78,7 +78,7 @@ static int		salloc(char **strs, char const *s, char c)
 	return (1);
 }
 
-static void		fill(char **strs, char const *s, char c)
+static void	fill(char **strs, char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -105,7 +105,7 @@ static void		fill(char **strs, char const *s, char c)
 	strs[i] = 0;
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 
