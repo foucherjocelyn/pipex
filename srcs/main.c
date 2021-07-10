@@ -1,13 +1,13 @@
 #include "pipex.h"
-#include "string.h"
 
 int	main(int argc, char **argv, char **envp)
 {
 	t_cmd	cmd;
-	char	path[100];
+	char	*path;
 
-	if (argc !=2 )
+	if (argc != 2)
 		return (-1);
+	path = ft_getenv(envp, "PATH");
 	cmd.envp = envp;
 	parse_cmd(&cmd, argv[1]);
 	strcpy(path, "/bin/");
