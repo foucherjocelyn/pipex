@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <errno.h>
 # include "util.h"
 
 typedef struct s_cmd
@@ -13,7 +14,8 @@ typedef struct s_cmd
 	char	**envp;
 }t_cmd;
 
-int	parse_cmd(t_cmd *cmd, char *raw_cmd);
-int	execute_cmd(t_cmd cmd);
+int		parse_cmd(t_cmd *cmd, char *raw_cmd);
+int		execute_cmd(t_cmd cmd);
+char	*get_cmd_path(char *filename, char *path);
 
 #endif
