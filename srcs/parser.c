@@ -42,7 +42,8 @@ int	parse_cmd(t_cmd *cmd, char *raw_cmd)
 	}
 	if (copy_args(cmd, splitted) == -1)
 	{
-		//TODO:free splitted
+		ft_free_array((void **)splitted);
+		free(splitted);
 		return (-1);
 	}
 	return (0);

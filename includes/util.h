@@ -9,5 +9,6 @@ void	*ft_memset(void *b, int c, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_getenv(char **envp, const char *name);
 size_t	ft_strlen(const char *s);
+void	ft_free_array(void **array);
 
 #endif
