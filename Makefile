@@ -10,7 +10,7 @@ NAME		= pipex
 
 CC			= clang-9 
 
-CFLAGS		= -Wall -Werror -Wextra -O3 -g -fsanitize=address
+CFLAGS		= -Wall -Werror -Wextra -g
 
 RM			= rm -rf
 

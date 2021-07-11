@@ -41,9 +41,15 @@ char	*get_cmd_path(char *filename, char *path)
 			return (NULL);
 		}
 		if (access(pathname, X_OK) == 0)
+		{
+			ft_free_array((void **)every_path);
+			free(every_path);
 			return (pathname);
+		}
 		free(pathname);
 		i++;
 	}
+	ft_free_array((void **)every_path);
+	free(every_path);
 	return (NULL);
 }
