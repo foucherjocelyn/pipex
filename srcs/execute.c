@@ -20,7 +20,7 @@ t_cmd	init_command(char *cmdstring, char *path, char **envp)
 	return (cmd);
 }
 
-int	fork_and_execute(char *cmdstring, char *path, char **envp)
+int	fork_and_execute(char *cmdstring, char *path, char **envp, t_fd fd)
 {
 	int	pid;
 
@@ -32,9 +32,11 @@ int	fork_and_execute(char *cmdstring, char *path, char **envp)
 	}
 	if (pid == 0)
 	{
+		redirect_pipe(fd.fdin, fd.fdout);
+		close(fd.pipefd[0]);
+		close(fd.pipefd[1]);
 		execute_cmd(init_command(cmdstring, path, envp));
 		exit(EXIT_FAILURE);
 	}
-	wait(0);
 	return (0);
 }
