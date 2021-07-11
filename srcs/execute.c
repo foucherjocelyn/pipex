@@ -2,10 +2,11 @@
 
 int	execute_cmd(t_cmd cmd)
 {
-	execve(cmd.filename, cmd.argv, cmd.envp);
+	if (cmd.filename != NULL)
+		execve(cmd.filename, cmd.argv, cmd.envp);
+	perror("Error");
 	free(cmd.filename);
 	ft_free_array((void **)cmd.argv);
-	perror("Error");
 	free(cmd.argv);
 	return (-1);
 }
@@ -35,6 +36,8 @@ int	fork_and_execute(char *cmdstring, char *path, char **envp, t_fd fd)
 		redirect_pipe(fd.fdin, fd.fdout);
 		close(fd.pipefd[0]);
 		close(fd.pipefd[1]);
+		close(fd.filein);
+		close(fd.fileout);
 		execute_cmd(init_command(cmdstring, path, envp));
 		exit(EXIT_FAILURE);
 	}

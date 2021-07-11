@@ -5,6 +5,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <errno.h>
+# include <fcntl.h>
 # include <sys/wait.h>
 # include "util.h"
 
@@ -20,6 +21,8 @@ typedef struct s_fd
 	int	fdin;
 	int	fdout;
 	int	pipefd[2];
+	int	filein;
+	int	fileout;
 }t_fd;
 
 int		parse_cmd(t_cmd *cmd, char *raw_cmd);
