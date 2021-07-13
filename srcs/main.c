@@ -7,7 +7,10 @@ int	main(int argc, char **argv, char **envp)
 	t_fd	fd;
 
 	if (argc != 5)
+	{
+		printf("Error : 4 arguments expected\n");
 		return (-1);
+	}
 	fd.filein = open(argv[1], O_RDONLY);
 	if (fd.filein == -1)
 		return (ft_error("Error "));
