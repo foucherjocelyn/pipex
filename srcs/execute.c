@@ -34,10 +34,7 @@ int	fork_and_execute(char *cmdstring, char *path, char **envp, t_fd fd)
 	if (pid == 0)
 	{
 		redirect_pipe(fd.fdin, fd.fdout);
-		close(fd.pipefd[0]);
-		close(fd.pipefd[1]);
-		close(fd.filein);
-		close(fd.fileout);
+		close_fds(fd);
 		execute_cmd(init_command(cmdstring, path, envp));
 		exit(EXIT_FAILURE);
 	}

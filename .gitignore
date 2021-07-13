@@ -1,3 +1,5 @@
 .*.swp
 objs/*
 pipex
+input
+output

@@ -31,5 +31,7 @@ char	*get_cmd_path(char *filename, char *path);
 int		fork_and_execute(char *cmdstring, char *path, char **envp, t_fd fd);
 t_cmd	init_command(char *cmdstring, char *path, char **envp);
 int		redirect_pipe(int fdin, int fdout);
+int		close_fds(t_fd fd);
+int		ft_error(char *message);
 
 #endif
