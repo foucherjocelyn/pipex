@@ -27,6 +27,7 @@ $(OBJS_DIR)/%.o : $(SRCS_DIR)/%.c
 		$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
+			$(RM) $(OBJS_DIR)
 			$(RM) $(OBJS)
 
 fclean:		clean
