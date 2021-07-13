@@ -7,6 +7,8 @@ static char	*ft_strdupcatwithslash(char *s1, char *s2)
 	char	*result;
 	int		len;
 
+	if (s2 == NULL || *s2 == '\0')
+		return (NULL);
 	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 2));
 	if (result == NULL)
 	{
@@ -39,7 +41,7 @@ char	*get_cmd_path(char *filename, char *path)
 	{
 		pathname = ft_strdupcatwithslash(every_path[i], filename);
 		if (pathname == NULL)
-			return (NULL);
+			break ;
 		if (access(pathname, X_OK) == 0)
 			break ;
 		free(pathname);
